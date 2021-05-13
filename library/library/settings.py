@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'authors',
-    'authapp',
+    'custom_auth',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +120,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+AUTH_USER_MODEL = 'custom_auth.CustomUser'
+# LOGIN_URL = '/auth/login/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
