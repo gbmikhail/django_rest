@@ -1,4 +1,4 @@
-"""library URL Configuration
+"""todo_list URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -13,16 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from authors.views import AuthorModelViewSet
 from custom_auth.views import CustomUserModelViewSet
 
 router = DefaultRouter()
-router.register('authors', AuthorModelViewSet)
-router.register('user', CustomUserModelViewSet)
+router.register('users', CustomUserModelViewSet)
 
 urlpatterns = [
    path('admin/', admin.site.urls),
