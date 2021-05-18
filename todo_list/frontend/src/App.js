@@ -3,6 +3,8 @@ import './css/dropdown.css';
 import React from 'react';
 import axios from 'axios'
 import UserList from "./components/users";
+import Footer from "./components/footer";
+import Menu from "./components/menu";
 
 class App extends React.Component {
     constructor(props) {
@@ -28,27 +30,13 @@ class App extends React.Component {
     render() {
         return (
             <body>
-                <div className="navbar">
-                    <a href="#">Главная</a>
-                    <div className="dropdown">
-                        <button className="dropbtn">Выпадающее меню
-                            {/*<i className="fa-caret-down"></i>*/}
-                        </button>
-                        <div className="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                </div>
+                <Menu/>
 
                 <div className="content">
                     <UserList users={this.state.users} />
                 </div>
 
-                <div className="footer">
-                    <p>&copy; 2021 Mikhail Zaika</p>
-                </div>
+                <Footer/>
             </body>
         )
     }
