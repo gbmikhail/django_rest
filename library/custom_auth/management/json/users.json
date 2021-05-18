@@ -1,0 +1,16 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "is_superuser": true,
+    "email": "admin@example.com",
+    "is_staff": true
+  },
+  {
+    "username": "user",
+    "password": "user",
+    "is_superuser": false,
+    "email": "user@example.com",
+    "is_staff": true
+  }
+]
