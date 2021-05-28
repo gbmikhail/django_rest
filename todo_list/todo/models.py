@@ -6,18 +6,10 @@ from custom_auth.models import CustomUser
 class Project(models.Model):
     name = models.CharField(max_length=128, unique=True, db_index=True, verbose_name='Проект')
     href = models.CharField(max_length=255, verbose_name='Ссылка на репозиторий')
+    user = models.ManyToManyField(to=CustomUser, verbose_name='Пользователь')
 
     def __str__(self):
         return f'{self.name}'
-
-
-class ProjectUsers(models.Model):
-    project = models.ForeignKey(Project, null=False, on_delete=models.CASCADE, db_index=True, verbose_name='Проект')
-    user = models.ForeignKey(CustomUser, null=False, on_delete=models.CASCADE, db_index=True,
-                             verbose_name='Пользователь')
-
-    def __str__(self):
-        return f'{self.project} / {self.user}'
 
 
 class Todo(models.Model):
