@@ -11,6 +11,7 @@ django-sekizai==0.10.0
 django-treebeard==4.3.1
 djangocms-admin-style==2.0.2
 djangorestframework==3.12.4
+djangorestframework-camel-case==1.2.0
 importlib-metadata==4.0.1
 Markdown==3.3.4
 Pillow==8.2.0
