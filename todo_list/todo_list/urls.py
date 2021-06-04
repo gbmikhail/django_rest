@@ -15,14 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 from custom_auth.views import CustomUserModelViewSet
+from todo.views import ProjectModelViewSet, TodoModelViewSet
 
 router = DefaultRouter()
-router.register('users', CustomUserModelViewSet)
+router.register('user', CustomUserModelViewSet)
+router.register('project', ProjectModelViewSet)
+router.register('todo', TodoModelViewSet)
 
 urlpatterns = [
    path('admin/', admin.site.urls),
    path('api/', include(router.urls)),
-   # path('api-auth/', include('rest_framework.urls')),
+
+   # http://127.0.0.1:8000/api-auth/login/
+   # http://127.0.0.1:8000/api-auth/logout/
+   path('api-auth/', include('rest_framework.urls')),
+   path('api-token-auth/', views.obtain_auth_token),
 ]
