@@ -1,22 +1,34 @@
-import './../App.css';
+import '../App.css';
 
-const Menu = () => {
-   return (
-        <div className="navbar">
-            <a href="#">Главная</a>
-            <div className="dropdown">
-                <button className="dropbtn">Выпадающее меню
-                    {/*<i className="fa-caret-down"></i>*/}
-                </button>
-                <div className="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+import {HashRouter, Route, Link} from 'react-router-dom'
+import React from "react";
+
+ const Menu = (app) => {
+// class Menu extends React.Component {
+//
+//     render() {
+        return (
+            <div className="navbar">
+                <Link to='/'>Главная</Link>
+
+                <Link to='/user'>Пользователи</Link>
+                <Link to='/project'>Проекты</Link>
+                <Link to='/todo'>Заметки</Link>
+                {app.app.is_auth() ? <Link to='/logout'>Выйти</Link> : <Link to='/login'>Авторизация</Link>}
+
+                {/*<div className="dropdown">*/}
+                {/*    <button className="dropbtn">Выпадающее меню*/}
+                {/*        /!*<i className="fa-caret-down"></i>*!/*/}
+                {/*    </button>*/}
+                {/*    <div className="dropdown-content">*/}
+                {/*        <Link to='/user'>Пользователи</Link>*/}
+                {/*        <Link to='/project'>Проекты</Link>*/}
+                {/*        <Link to='/todo'>Заметки</Link>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
-        </div>
-   )
+        )
+    //}
 }
-
 
 export default Menu
