@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
     'drf_yasg',
 
+    # Required for GraphiQL
+    "graphene_django",
+
     'custom_auth',
     'todo',
 ]
@@ -182,4 +185,8 @@ REST_FRAMEWORK = {
 
     # 'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
+}
+
+GRAPHENE = {
+    "SCHEMA": "todo.schema.schema"
 }
